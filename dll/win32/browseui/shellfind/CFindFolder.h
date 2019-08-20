@@ -87,6 +87,8 @@ private:
     // *** Message handlers ***
     LRESULT StartSearch(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL &bHandled);
 
+    LRESULT StopSearch(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL &bHandled);
+
     LRESULT AddResult(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL &bHandled);
 
     LRESULT UpdateStatus(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL &bHandled);
@@ -106,6 +108,7 @@ public:
 
     BEGIN_MSG_MAP(CFindFolder)
         MESSAGE_HANDLER(WM_SEARCH_START, StartSearch)
+        MESSAGE_HANDLER(WM_SEARCH_STOP, StopSearch)
         MESSAGE_HANDLER(WM_SEARCH_ADD_RESULT, AddResult)
         MESSAGE_HANDLER(WM_SEARCH_UPDATE_STATUS, UpdateStatus)
     END_MSG_MAP()
